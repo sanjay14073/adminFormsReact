@@ -80,7 +80,7 @@ const SignUpForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/signup', {
+      const response = await fetch('http://localhost:3000/user/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -109,7 +109,28 @@ const SignUpForm = () => {
       <div style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', padding: '20px', borderRadius: '8px', width: '400px' }}>
         <h2 style={{ textAlign: 'center', marginBottom: '20px', color: '#333' }}>Sign Up</h2>
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-            
+        <label>
+        Profile Image:
+        <input type="text" name="profile_image" value={formData.profile_image} onChange={handleChange} />
+      </label>
+
+      <label>
+        User Name:
+        <input type="text" name="user_name" value={formData.user_name} onChange={handleChange} />
+      </label>
+
+      {/* Add more input fields for other basic information */}
+
+      {/* Emergency Details */}
+      <label>
+        Emergency Contact Name:
+        <input type="text" name="emergency_details.emergency_contact_name" value={formData.emergency_details.emergency_contact_name} onChange={handleChange} />
+      </label>
+
+      <label>
+        Emergency Phone Number:
+        <input type="text" name="emergency_details.emergency_phone_no" value={formData.emergency_details.emergency_phone_no} onChange={handleChange} />
+      </label>
           
           <button type="submit" style={{ padding: '10px', backgroundColor: '#4CAF50', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>Submit</button>
         </form>
