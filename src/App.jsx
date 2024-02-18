@@ -7,6 +7,8 @@ import AddTechnician from './pages/addTechinician';
 import SignUpForm from './pages/addUser';
 import Dashboard from './pages/Home';
 import AddEMT from './pages/addEMT';
+import InsuranceDetailsForm from './pages/addInsurance';
+
 function App() {
   return (
     <Router>
@@ -18,7 +20,7 @@ function App() {
         <Route path='/addInsuranceCompany' element={<AddInsuranceCompany/>}/>
         <Route path='/addHospital' element={<AddHospital/>}/>
         <Route path='/addEMT' element={<AddEMT/>}/>
-        <Route path='/addInsurance' element={<AddInsurance/>}/>
+        <Route path='/addInsurance' element={<InsuranceDetailsForm/>}/>
       </Routes>
     </Router>
   );
